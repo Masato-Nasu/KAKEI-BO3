@@ -23,19 +23,27 @@ AIで読み取った内容は基本的に自動保存されます。必要なと
 
 ![確認・編集と月ごとの集計](screenshot2.png)
 
-### 3. 保存履歴・辞書登録・カテゴリ設定
+### 3. 保存履歴・辞書登録・APIキー設定
 
 保存済みの記録を確認したり、JSON/CSVで書き出したりできます。  
-よく出る品目はカテゴリ辞書に登録できるので、次回から分類しやすくなります。
+よく出る品目はカテゴリ辞書に登録できるので、次回から分類しやすくなります。  
+OpenAI APIキーの保存・更新・削除もここから行えます。
 
-![保存履歴と設定](screenshot3.png)
+![保存履歴・辞書登録・APIキー設定](screenshot3.png)
 
-### 4. 家族メンバー設定
+### 4. カテゴリ設定・家族メンバー設定
 
-家族メンバーを自由に編集できます。  
-新規入力時に最初から選ばれる対象者も、家族共通・夫・妻・子供・任意メンバーから選べます。
+AIが使うカテゴリを自由に編集できます。  
+家族メンバーも変更でき、新規入力時に最初から選ばれる対象者を、家族共通・夫・妻・子供・任意メンバーから選べます。
 
-![家族メンバー設定](screenshot4.png)
+![カテゴリ設定・家族メンバー設定](screenshot4.png)
+
+### 5. 固定費・画像整理
+
+家賃、保険、通信費、サブスクなど、毎月発生する支出を固定費として登録できます。  
+指定日より前のレシート画像だけを削除して、記録を残したまま端末容量を整理することもできます。
+
+![固定費・画像整理](screenshot5.png)
 
 ---
 
@@ -54,6 +62,7 @@ KAKEI-BO3 では、主に以下のことができます。
 - JSONでバックアップする
 - 他の家族が書き出したJSONを追加する
 - CSVで書き出して表計算ソフトなどで使う
+- 古いレシート画像だけを削除する
 
 ---
 
@@ -157,6 +166,15 @@ KAKEI-BO3 では、支出を誰のものとして記録するかを選べます�
 
 ---
 
+## 画像整理
+
+レシート画像は端末内に保存されます。  
+画像整理では、指定日より前の画像だけを削除できます。
+
+記録そのものは残るため、古い画像で端末容量が重くなってきたときに使えます。
+
+---
+
 ## JSONバックアップと追加インポート
 
 KAKEI-BO3 では、記録や設定をJSONとして書き出せます。
@@ -235,8 +253,9 @@ KAKEI-BO3-main/
 ├─ functions/api/analyze.js  AI解析用のCloudflare Pages Function
 ├─ screenshot1.png           メイン画面
 ├─ screenshot2.png           確認・編集と月ごとの集計
-├─ screenshot3.png           保存履歴・設定
-├─ screenshot4.png           家族メンバー設定
+├─ screenshot3.png           保存履歴・辞書登録・APIキー設定
+├─ screenshot4.png           カテゴリ設定・家族メンバー設定
+├─ screenshot5.png           固定費・画像整理
 ├─ DEPLOY-KAKEI-BO3.md       デプロイ手順
 ├─ deploy-kakei-bo3.ps1      PowerShell用デプロイスクリプト
 └─ deploy-kakei-bo3.bat      Windows用デプロイスクリプト
@@ -251,10 +270,11 @@ KAKEI-BO3-main/
 - APIキーは各端末のブラウザ内に保存されます。
 - 共有端末で使う場合は、使用後にAPIキーを削除してください。
 - JSONバックアップは定期的に保存しておくと安心です。
+- レシート画像が増えてきた場合は、画像整理で古い画像だけを削除できます。
 
 ---
 
 ## アプリ名
 
 **KAKEI-BO3**  
-Receipt-based family expense recorder with AI-assisted extraction, manual entry, fixed costs, member-based ownership, JSON backup, and additive import.
+Receipt-based family expense recorder with AI-assisted extraction, manual entry, fixed costs, member-based ownership, JSON backup, additive import, and local image cleanup.
