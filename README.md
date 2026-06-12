@@ -225,18 +225,6 @@ CSVは、Excel、Googleスプレッドシート、Numbersなどで開けます�
 
 ホーム画面に追加すると、普通のアプリのように起動できます。
 
----
-
-## デプロイ方法
-
-Cloudflare Pages にデプロイする場合は、ZIPをデスクトップに展開してから、PowerShellで以下を実行します。
-
-```powershell
-cd "$env:USERPROFILE\Desktop\KAKEI-BO3-main"
-npx wrangler pages deploy . --project-name kakei-bo3
-```
-
-別のプロジェクト名で公開したい場合は、`kakei-bo3` の部分を変更してください。
 
 ---
 
